@@ -5,12 +5,17 @@ var changeCase = require('change-case');
 module.exports = function swagger2express(options, app){
   var apiDoc = options.swaggerDoc;
   var controllerDir = options.controllerDir;
+  var modelDir = options.modelDir;
   var controllers = {};
 
   var controllerFiles = fs.readdirSync(controllerDir);
   for(var i = 0; i < controllerFiles.length; i++){
     var controllerName = controllerFiles[i].replace(/\.js$/, '');
-    controllers[controllerName] = require('../../' + controllerDir + '/' + controllerName);
+    var Controller = require('../../' + controllerDir + '/' + controllerName);
+    controllers[controllerName] = new Controller({
+      modelDir: modelDir,
+      name: controllerName
+    });
   }
 
   for(var route in apiDoc.paths){

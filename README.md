@@ -22,7 +22,8 @@ var express = require('express');
 var app = express();
 var options = {
   swaggerDoc: swaggerDoc,
-  controllerDir: 'api/controllers'
+  controllerDir: 'api/controllers',
+  modelDir: 'api/models'
 }
 swagger2express(options, app);
 app.listen(PORT);
@@ -42,9 +43,8 @@ app.listen(PORT);
 
  .del(req, res){}
 
-
+*modelDir* = The path to your models
 
 ### Why
 
 This can be used to generate express routes for your application from your swagger document. This reduces duplication, as you already have your swagger document, right?
-
