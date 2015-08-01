@@ -1,0 +1,31 @@
+{
+  "name": "swagger2express",
+  "version": "1.0.0",
+  "description": "Generate express routes from a swagger document",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/niahmiah/swagger2express.git"
+  },
+  "keywords": [
+    "swagger",
+    "express",
+    "routes"
+  ],
+  "author": "Ian Patton <ian.patton@gmail.com> (http://github.com/niahmiah)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niahmiah/swagger2express/issues"
+  },
+  "homepage": "https://github.com/niahmiah/swagger2express",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "change-case": "^2.3.0"
+  }
+}
