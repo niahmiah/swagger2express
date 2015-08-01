@@ -35,13 +35,23 @@ app.listen(PORT);
 
 *controllerDir* - The path to your controllers. Requests are routed to controllers based on the value of *x-api-controller* and controller methods based on *operationId*. There should be one controller per unique path in Swagger JSON, that handles each verb for that path. Each controller should export a handler for each REST verb:
 
- .get(res, res){}
-
- .post(req, res){}
-
- .put(req, res){}
-
- .del(req, res){}
+ ####Example
+ ```
+ Controller.prototype.get = function(options){
+  return function ctrlGet(req, res){
+    var Model = require('../' + options.modelDir + '/' + options.name);
+    Model.find(req.params, function(err, docs){
+      if(err){
+        res.status(500).send();
+      }else if(docs){
+        res.status(200).json(docs);
+      }else{
+        res.status(404).send();
+      }
+    });
+  };
+};
+```
 
 *modelDir* = The path to your models
 
