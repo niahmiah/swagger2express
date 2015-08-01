@@ -10,7 +10,7 @@ module.exports = function swagger2express(options, app){
   var controllerFiles = fs.readdirSync(controllerDir);
   for(var i = 0; i < controllerFiles.length; i++){
     var controllerName = controllerFiles[i].replace(/\.js$/, '');
-    controllers[controllerName] = require('../' + controllerDir + '/' + controllerName);
+    controllers[controllerName] = require('../../' + controllerDir + '/' + controllerName);
   }
 
   for(var route in apiDoc.paths){
