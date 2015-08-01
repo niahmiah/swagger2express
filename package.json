@@ -1,6 +1,6 @@
 {
   "name": "swagger2express",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate express routes from a swagger document",
   "main": "index.js",
   "scripts": {
