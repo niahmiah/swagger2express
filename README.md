@@ -1,5 +1,7 @@
 # Swagger 2 Express
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/niahmiah/swagger2express.svg)](https://greenkeeper.io/)
+
 Dynamically generate express routes for your REST API, using your Swagger JSON.
 
 See http://swagger.io
